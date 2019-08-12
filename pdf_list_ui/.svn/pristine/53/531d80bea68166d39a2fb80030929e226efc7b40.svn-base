@@ -1,0 +1,58 @@
+import Vue from 'vue'
+import BootstrapVue from "bootstrap-vue"
+import App from './App.vue'
+import s from './test'
+import buidTree from './treeDefination'
+import {get, getTableByEntry, prepareTreeData} from './utils'
+
+
+
+
+
+Vue.use(BootstrapVue)
+//Vue.use(Item)
+eventBus = new Vue();
+
+new Vue({
+  el: '#app',
+  render: h => h(App),
+})
+
+//alert('!!appisRunning!!')
+
+//$(function() {
+  window.onload  = function () {
+   // Ваш скрипт
+   jrpc.call('mTree',['s',null]).then(function (result) {
+        // result = JSON.stringify(result);
+        console.log(result);
+        var treeData = getTableByEntry(result, ["id","title", "folder"], 'folders');
+        var treeData = prepareTreeData(treeData);
+        buidTree(treeData);
+
+        let ndata = {
+          id :  treeData[0].id
+          ,name : treeData[0].title
+        }
+        console.log(treeData)
+        eventBus.$emit('treeNodeActivate',ndata, 2);
+
+
+    }).catch(function(error){
+      console.log("Error!!!");
+      console.log(error);
+  });
+  //  get("/folders/data?act=s&id=null").then(function(data) {    
+  //     console.log(data);
+  // //      var treeData = getTableByEntry(data, ["id","title", "folder"], 'folders');
+  // //      var treeData = prepareTreeData(treeData);
+  // //     // console.log(treeData);
+  // //     buidTree(treeData);
+  // //     //buildTree();
+   
+  // }).catch(function(error){
+  //     console.log("Error!!!");
+  //     console.log(error);
+  // });
+}
+//});

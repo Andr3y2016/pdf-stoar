@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ApiTEst</title>
+
+   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jquery.fancytree/2.27.0/skin-win8/ui.fancytree.css'>
+  
+</head>
+
+<body>
+  <style type="text/css">
+    .tree { 
+    background: #22222236; /* Цвет фона */
+    border: 2px solid black; /* Параметры рамки */
+    /*padding: 20px;  Поля вокруг текста */
+    /* Отступ сверху */
+      /*float:left; */
+      top :10%;
+      left :0%;
+      width: 20%;
+      position: fixed
+    }
+    .app { 
+      width: 80%;
+      /*left :50%;*/
+       /*margin-top: -10%;*/
+        float:right; 
+     /*  position: relative;*/
+    }
+ul.fancytree-container {
+    /*width: 200px;*/
+    /*height: 120px;*/
+    margin-top: calc(1.5em + .75rem + 2px);%;
+    overflow: auto;
+    /*position: relative;*/
+  }
+
+
+  </style>
+<!-- 
+<table>
+  <tr>
+    <td> -->
+     
+<!--     </td>
+    <td> -->
+<div class="app" ><div id = 'app' ></div></div>
+    
+<div id="tree" class="tree"></div>
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+ <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> 
+
+<script src='https://cdn.jsdelivr.net/npm/jquery.fancytree/dist/jquery.fancytree-all-deps.min.js'></script>
+
+<script src="http://wwwendt.de/tech/fancytree/src/jquery.fancytree.dnd.js"></script>
+
+  <!-- jquery-contextmenu (https://github.com/swisnl/jQuery-contextMenu) -->
+  <link rel="stylesheet"
+    href="//cdn.jsdelivr.net/npm/jquery-contextmenu@2.6.4/dist/jquery.contextMenu.min.css" />
+  <script src="//cdn.jsdelivr.net/npm/jquery-contextmenu@2.6.4/dist/jquery.contextMenu.min.js">
+  </script>
+  <!-- (Irrelevant source removed.) -->
+
+<!-- dialog -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <style>
+    label, input { display:block; }
+    input.text { margin-bottom:12px; width:95%; padding: .4em; }
+    fieldset { padding:0; border:0; margin-top:25px; }
+    
+  </style>
+
+ <div id="dialog-form" title="" style="display:none"> 
+  <form>
+    <fieldset>
+      <label for="name">Название:</label>
+      <input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
+      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+    </fieldset>
+  </form>
+</div>
+
+<script type="text/javascript">
+
+
+   var appInfo = {data : []
+                 ,fieldset : 
+                    { 
+                      id:-1, 
+                      name:null,
+                      procCnt:null, 
+                      url:null,
+                      imgUrl:null
+                    }
+                  ,postDataitem : function (item, prm) {
+                     console.log('postDataitem')
+                   console.log(  appInfo.data[prm.idx]);
+
+                    console.log( nData);
+
+                   appInfo.data[prm.idx] = Object.assign({}, nData);
+                  }
+
+
+            }
+  var eventBus = {};
+</script>
+  <script src="/lib/simple-jsonrpc-js.min.js"></script>
+  <script src="/lib/rpc-conf.js"></script>
+
+  
+  <link rel="stylesheet" href="/dist/main.css">
+  <script src="/dist/build.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,72 @@
+
+<template>
+  <div id="apsp">  	 
+     <itemsBlock></itemsBlock>     
+  </div>  
+</template>
+
+<script>
+import itemsBlock from './itemsBlock.vue'
+import pagination from './pagination.vue'
+import item from './item.vue'
+
+export default {
+  name: 'app',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+      ,currentPage: 2
+    }
+  },
+
+  methods: {
+   onPageChange: function (page) {
+      console.log(page)
+      this.currentPage = page;
+    }
+  },
+  components: {
+    itemsBlock,
+    pagination,
+    item
+  }
+
+}
+
+</script>
+/*<pagination :total-pages="11" :total="120" :current-page="currentPage" @pagechanged="onPageChange"></pagination>*/
+<style lang="scss" scoped>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a {
+  color: #42b983;
+}
+
+user agent stylesheet
+div {
+    display: block;
+}
+
+</style>
+<style scoped src="./test.css" ></style>
